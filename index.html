@@ -35,7 +35,9 @@
 
     <form id="bookingForm">
         <input type="text" id="name" placeholder="الاسم بالكامل" required>
-        
+
+        <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+
         <select id="service" required>
             <option value="">اختاري الخدمة</option>
             <option>مكياج</option>
@@ -43,10 +45,10 @@
             <option>عناية كاملة</option>
             <option>أضافر</option>
         </select>
-        
-        <select id="service" required>
-            <option value="">قدمي على طلب منتج للعناية ببشرتك</option>
-            <option>Cleansers منتجات التنظيف</option>\
+
+        <select id="product" required>
+            <option value="">اختاري منتج للعناية بالبشرة</option>
+            <option>Cleansers منتجات التنظيف</option>
             <option>Toners التونر</option>
             <option>Serums الأمصال</option>
             <option>Moisturizers مرطبات البشرة</option>
@@ -71,6 +73,7 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
     let name = document.getElementById("name").value;
     let phone = document.getElementById("phone").value;
     let service = document.getElementById("service").value;
+    let product = document.getElementById("product").value;
     let date = document.getElementById("date").value;
     let time = document.getElementById("time").value;
 
@@ -79,6 +82,7 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
 الاسم: ${name}
 الرقم: ${phone}
 الخدمة: ${service}
+المنتج: ${product}
 التاريخ: ${date}
 الوقت: ${time}`;
 
