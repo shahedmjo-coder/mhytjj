@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ميثاق - حجز مواعيد</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>ميثاق</h1>
+    <p>عهدنا لك بالتميز</p>
+</header>
+
+<section id="home">
+    <h2>مرحبا بكِ في مركز ميثاق</h2>
+    <p>جمالك مسؤوليتنا</p>
+</section>
+
+<section id="services">
+    <h2>خدماتنا</h2>
+    <div>
+        <div>مكياج</div>
+        <div>تصفيف شعر</div>
+        <div>عناية بالبشرة</div>
+        <div>مستحضرات تجميل</div>
+        <div>أضافر</div>
+    </div>
+</section>
+
+<section id="booking">
+    <h2>احجزي لحظة تألقك</h2>
+
+    <form id="bookingForm">
+        <input type="text" id="name" placeholder="الاسم بالكامل" required>
+        
+        <select id="service" required>
+            <option value="">اختاري الخدمة</option>
+            <option>مكياج</option>
+            <option>شعر</option>
+            <option>عناية كاملة</option>
+            <option>أضافر</option>
+        </select>
+        
+        <select id="service" required>
+            <option value="">قدمي على طلب منتج للعناية ببشرتك</option>
+            <option>Cleansers منتجات التنظيف</option>\
+            <option>Toners التونر</option>
+            <option>Serums الأمصال</option>
+            <option>Moisturizers مرطبات البشرة</option>
+            <option>Sunscreens واق من الشمس</option>
+            <option>Face Oils زيوت البشرة</option>
+            <option>Acne Treatment علاج حب الشباب</option>
+            <option>Masks أقنعة</option>
+        </select>
+
+        <input type="date" id="date" required>
+        <input type="time" id="time" required>
+
+        <button type="submit">تأكيد الحجز</button>
+    </form>
+
+</section>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let service = document.getElementById("service").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
+
+    let message = 
+`مرحبا، اريد حجز:
+الاسم: ${name}
+الرقم: ${phone}
+الخدمة: ${service}
+التاريخ: ${date}
+الوقت: ${time}`;
+
+    let url = "https://wa.me/9647848493004?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+});
+</script>
+
+</body>
+</html>
